@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Nhịp học · Nhật ký của Khang</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+<div class="brand">
+<span class="mark" aria-hidden="true">≋</span>Nhịp học</div>
+<button class="profileLink" id="openProfile"><span id="headAvatar">🪐</span><span id="headName">Khang</span><span aria-hidden="true">⌄</span></button>
+</header>
+<main><div id="workspace">
+<div class="intro">
+<div>
+<small id="weekday">
+</small>
+<h1>Nhật ký hằng ngày</h1>
+</div>
+<input id="date" type="date" aria-label="Chọn ngày">
+</div>
+<section class="overview" aria-label="Tiến độ học tập">
+<img class="stage" src="/miku.webp" alt="Hatsune Miku trên sân khấu pixel art">
+<div class="metric"><small>✦ &nbsp; THỜI GIAN HỌC</small><strong class="big" id="total">—</strong>
+<label id="goalLabel" for="progress">Mục tiêu học tập</label><progress id="progress" value="0" max="60"></progress><div class="lifeMetric">Sinh hoạt cá nhân <b id="lifeTotal">—</b></div></div>
+</section>
+<div class="summary"><b id="count">Đang tải…</b><span id="subjects"></span><small id="unknown"></small></div>
+<div class="cols">
+<section class="card">
+<h2><span class="icon">✎</span> <span id="formTitle">Ghi hoạt động</span></h2>
+<form id="form">
+<fieldset class="typePicker"><legend>Loại hoạt động</legend><label><input type="radio" name="kind" value="study" checked> Học tập</label><label><input type="radio" name="kind" value="life"> Sinh hoạt cá nhân</label></fieldset>
+<label for="period">Khung giờ</label>
+<input id="period" placeholder="Ví dụ: 19h–20h" maxlength="100" required>
+<label for="note">Bạn đã làm gì?</label>
+<textarea id="note" rows="3" maxlength="4000" placeholder="Ghi lại hoạt động trong khoảng giờ này…" required>
+</textarea>
+<div class="pair">
+<div>
+<div id="studyField"><label for="subject">Môn học</label>
+<input id="subject" maxlength="120" placeholder="Nếu có"></div><div hidden id="lifeField"><label for="category">Nhóm sinh hoạt</label><select id="category"><option>Ăn uống</option><option>Ngủ nghỉ</option><option>Vận động</option><option>Giải trí</option><option>Việc cá nhân</option><option selected>Khác</option></select></div>
+</div>
+<div>
+<label id="minutesLabel" for="minutes">Số phút học</label>
+<input type="number" min="0" max="1440" step="1" id="minutes" placeholder="Chưa rõ để trống">
+</div>
+</div>
+<button class="save" id="save">Lưu hoạt động</button>
+<button type="button" class="secondary" hidden id="cancel">Hủy sửa</button>
+</form>
+<p role="status" id="msg">
+</p>
+</section>
+<section class="card">
+<h2><span class="icon">☷</span> Hoạt động trong ngày</h2>
+<select id="filter" aria-label="Lọc hoạt động"><option value="all">Tất cả hoạt động</option><option value="study">Học tập</option><option value="life">Sinh hoạt cá nhân</option></select><div id="entries">
+</div>
+</section>
+</div>
+
+</div></main>
+<dialog id="profile"><form id="profileForm">
+<div class="dialogTop"><h2>Hồ sơ cá nhân</h2><button type="button" id="closeProfile" aria-label="Đóng hồ sơ">×</button></div>
+<div class="preview"><span id="previewAvatar"></span><div><strong id="previewName"></strong><p id="previewBio"></p></div></div>
+<label for="displayName">Tên hiển thị</label><input id="displayName" maxlength="40" required>
+<label for="bio">Giới thiệu ngắn</label><input id="bio" maxlength="120" placeholder="Ví dụ: Tân sinh viên CNTT">
+<fieldset><legend>Avatar</legend><div id="avatars" class="choices"></div></fieldset>
+<div class="uploadRow"><label class="uploadButton">Chọn ảnh từ thiết bị<input id="avatarFile" type="file" accept="image/jpeg,image/png,image/webp"></label><small>JPG, PNG, WebP · tối đa 12 MB</small></div>
+<fieldset><legend>Màu chủ đề</legend><div id="themes" class="choices"></div></fieldset>
+<label for="goal">Mục tiêu học mỗi ngày (phút)</label><input id="goal" type="number" min="1" max="1440" required>
+<p role="status" id="profileMsg"></p><button class="save" id="saveProfile">Lưu hồ sơ</button></form></dialog>
+<script src="app.js" defer>
+</script>
+</body>
+</html>
