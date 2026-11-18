@@ -1,0 +1,17 @@
+{
+  "framework": null,
+  "outputDirectory": "public",
+  "rewrites": [
+    {"source":"/api/days/:day","destination":"/api/journal?route=days/:day"},
+    {"source":"/api/entries/:id","destination":"/api/journal?route=entries/:id"},
+    {"source":"/api/entries","destination":"/api/journal?route=entries"},
+    {"source":"/api/schedule/:id","destination":"/api/journal?route=schedule/:id"},
+    {"source":"/api/schedule","destination":"/api/journal?route=schedule"},
+    {"source":"/api/appointments/:id","destination":"/api/journal?route=appointments/:id"},
+    {"source":"/api/appointments","destination":"/api/journal?route=appointments"},
+    {"source":"/api/profile","destination":"/api/journal?route=profile"},
+    {"source":"/api/remind","destination":"/api/journal?route=remind"},
+    {"source":"/api/push-subscribe","destination":"/api/journal?route=push-subscribe"},
+    {"source":"/mcp","destination":"/api/journal?route=mcp"}
+  ]
+}
