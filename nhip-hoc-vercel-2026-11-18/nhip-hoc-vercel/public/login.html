@@ -1,9 +1,0 @@
-<!doctype html><html lang="vi"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Mở nhật ký · Nhịp học</title><link rel="stylesheet" href="/style.css"><main style="max-width:540px;padding-top:12vh"><section class="card"><h1>Nhịp học</h1><form id="login"><label for="key">Mã truy cập nhật ký</label><input id="key" type="password" required autocomplete="current-password"><button class="save">Mở nhật ký</button><p role="status" id="feedback"></p></form></section></main><script>
-document.querySelector('form').onsubmit=async event=>{
- event.preventDefault();const key=document.querySelector('#key').value;
- try{const res=await fetch('/api/profile',{headers:{Authorization:'Bearer '+key}});
- if(!res.ok)throw Error((await res.json()).error);
- sessionStorage.setItem('nhip-key',key);location.replace('/');
- }catch(error){document.querySelector('#feedback').textContent=error.message}
-};
-</script></html>
